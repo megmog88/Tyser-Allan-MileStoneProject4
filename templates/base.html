@@ -8,6 +8,12 @@
 </head>
 <body>
 <header>
+    <div class="row">
+        <div class="col-12 offset-md-3 col-md-6 d-flex justify-content-center">
+            {% load static %}
+                <img src="{% static 'images/talogo.png' %}" alt="My image">    
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">Home</a>
