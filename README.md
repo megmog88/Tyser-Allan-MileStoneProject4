@@ -1,4 +1,4 @@
-![Logo](static/images/talogo.png)
+![Logo](pages/static/images/talogo.png)
 
 # MileStone Project Four- Tyser&Allan "Special Projects"
 
