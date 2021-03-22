@@ -37,9 +37,10 @@
             Merchandise
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownn">
-            <li><a class="dropdown-item" href="#">Log In</a></li>
-            <li><a class="dropdown-item" href="#">Register</a></li>
-             <li><a class="dropdown-item" href="#">Shop</a></li>
+            <li><a class="dropdown-item" href="{% url 'merchandise' %}">Merchandise</a></li>
+            <li><a class="dropdown-item" href="{% url 'login' %}">Log In</a></li>
+            <li><a class="dropdown-item" href="{% url 'signup' %}">Sign Up</a></li>
+             
           </ul>
         </li>
         <li class="nav-item">
