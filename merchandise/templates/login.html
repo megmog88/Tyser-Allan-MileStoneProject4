@@ -1,4 +1,13 @@
-{% extends 'base.html' %}
-    {% block content %}
-    <h1>Log In</h1>
-    {% endblock content %}
+{% extends "base.html" %} {% load i18n %} {% load account socialaccount %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
+{% trans "Sign In" %}
+{% get_providers as socialaccount_providers %} {% if socialaccount_providers %}
+{% blocktrans with site.name as site_name %}Please sign in with one of your existing third party accounts. Or, sign up for a {{ site_name }} account and sign in below:{% endblocktrans %}
+
+{% include "socialaccount/snippets/provider_list.html" with process="login" %}
+{% trans 'or' %}
+{% include "socialaccount/snippets/login_extra.html" %} {% else %}
+{% blocktrans %}If you have not created an account yet, then please sign up first.{% endblocktrans %}
+
+{% endif %}
+{% csrf_token %} {{ form.as_p }} {% if redirect_field_value %} {% endif %} {% trans "Forgot Password?" %} {% trans "Sign In" %}
+{% endblock %}
