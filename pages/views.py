@@ -15,9 +15,5 @@ class LandscapingPageView(TemplateView):
     template_name = 'landscaping.html'
 
 
-class MerchandisePageView(TemplateView):
-    template_name = 'merchandise.html'
-
-
 class ContactPageView(TemplateView):
     template_name = 'contact.html'
