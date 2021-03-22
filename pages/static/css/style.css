@@ -1,9 +1,17 @@
+
+/*----------------------Footer Styling---*/
+
 ul {
   list-style-type: none;
 }
 
 .fa {
     font-size: 75px;
-    color: aqua;
+    color: black;
+
 }
+
+.fa:hover{
+    color: white; }
+
 
