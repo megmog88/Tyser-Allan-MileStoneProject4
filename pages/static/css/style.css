@@ -19,6 +19,12 @@ ul {
 /*----------------------Beautiful Colors---*/
 body, header, footer {
     background-color: #5D5C61;
+    color: #7395AE;
 }
 
+/*----------------------NavBar Settings---*/
 
+.navbar-brand, .navbar, .navbar-collapse, .navbar-nav {
+    background-color: #5D5C61;
+    color: #7395AE;
+}

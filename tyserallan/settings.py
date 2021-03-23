@@ -130,6 +130,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/images/'
 
+STATIC_ROOT = "/var/www/example.com/static/"
+
 #
 
 AUTHENTICATION_BACKENDS = (
