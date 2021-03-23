@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Tyser&Allan</title>
+</head>
+<body>
+<header>
+    <div class="row">
+        <div class="col-12 offset-md-3 col-md-6 d-flex justify-content-center">
+            {% load static %}
+                <img src="{% static 'images/talogo.png' %}" alt="My image" class="img-fluid h-100 w-25">
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'draping' %}">Draping</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'landscaping' %}">Landscaping</a>
+        </li>
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'merchandise' %}" id="navbarDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Merchandise
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownn">
+            <li><a class="dropdown-item" href="{% url 'merchandise' %}">Merchandise</a></li>
+            <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'contact' %}">Contact</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+</header>
+    {% block content %}
+    {% endblock content %}
+
+<footer>
+    <div class="row">
+        <div class="col-12 col-md-6 border justify-content-center d-flex">
+            <ul>
+                <li>Tyser & Allan ltd</li>
+                <li>"Special Projects"</li>
+                <li>mark@tyserallan.com</li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3">
+                <a class="btn btn-secondary d-flex justify-content-center p-4 footer-button" href="contact.html">Get a Quote</a>
+            </div>
+        <div class="col-6 col-md-3">
+            <a href="#" aria-hidden="true" target="_blank"><i class="fa fa-facebook-square p-2 d-inline justify-content-center"></i></a>
+             <a href="#" aria-hidden="true" target="_blank"><i class="fa fa-instagram p-2 d-inline justify-content-center"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</html>
