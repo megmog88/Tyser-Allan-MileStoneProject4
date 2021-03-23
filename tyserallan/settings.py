@@ -61,8 +61,7 @@ ROOT_URLCONF = 'tyserallan.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'templates', 'allauth'),
+        'DIRS': [os.path.normpath(os.path.join(BASE_DIR, 'templates')),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -140,3 +139,5 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+LOGIN_REDIRECT_URL = 'merchandise'
