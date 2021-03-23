@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import HomePageView, DrapingPageView, LandscapingPageView, ContactPageView
 
 urlpatterns = [
@@ -6,4 +6,5 @@ urlpatterns = [
     path('landscaping/', LandscapingPageView.as_view(), name='landscaping'),
     path('contact/', ContactPageView.as_view(), name='contact'),
     path('', HomePageView.as_view(), name='home'),
+    path('accounts/', include('allauth.urls')),
 ]
