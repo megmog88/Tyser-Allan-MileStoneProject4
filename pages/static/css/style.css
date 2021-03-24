@@ -3,23 +3,34 @@
 
 ul {
   list-style-type: none;
+  color: #379683;
+  font-size: 20px;
 }
 
 .fa {
     font-size: 75px;
-    color: black;
+    color: #5D5C61;
 
 }
 
 .fa:hover{
-    color: white; }
+    color: #379683;}
+
+.footer-button {
+    background-color: #379683;
+    color: #5D5C61;
+    text-emphasis: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+
+}
 
 
 
 /*----------------------Beautiful Colors---*/
 body, header, footer {
-    background-color: #5D5C61;
-    color: #7395AE;
+    background-color: #b1a296;
+    color: #5D5C61;
 }
 
 /*----------------------NavBar Settings---*/
@@ -28,3 +39,4 @@ body, header, footer {
     background-color: #5D5C61;
     color: #7395AE;
 }
+
