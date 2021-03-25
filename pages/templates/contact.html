@@ -12,10 +12,10 @@
         </div>
     </div>
         <div class="row no-gutters">
-            <div class="col-10 offset-1">
+            <div class="col-4 offset-4">
 		        <form method="post">
                     {% csrf_token %}
-                    {{form.as_table}}
+                    {{form.as_p}}
                 </form>
             </div>
             <div class="row no-gutters">

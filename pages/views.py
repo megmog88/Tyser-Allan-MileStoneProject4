@@ -18,10 +18,6 @@ class LandscapingPageView(TemplateView):
     template_name = 'landscaping.html'
 
 
-class ContactPageView(TemplateView):
-    template_name = 'contact.html'
-
-
 def ContactView(request):
     if request.method == 'GET':
         form = ContactForm()
