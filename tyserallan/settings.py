@@ -28,6 +28,8 @@ SECRET_KEY = 'f9&nijk7rm5b$m((#%b@r4)o)e4klswl%!h+^y5q8836!pggum'
 DEBUG = True
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lee148aAAAAADRpC_FAxh9l2yGQ2j8aImdVqroG'
+
 
 # Application definition
 
@@ -148,6 +150,17 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
+
+#gmail_send/settings.py
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'yoorusername@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'default from email'
 
 
 # Configure Django App for Heroku.
