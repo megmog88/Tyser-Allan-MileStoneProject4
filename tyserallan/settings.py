@@ -28,8 +28,6 @@ SECRET_KEY = 'f9&nijk7rm5b$m((#%b@r4)o)e4klswl%!h+^y5q8836!pggum'
 DEBUG = True
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
-GOOGLE_RECAPTCHA_SECRET_KEY = '6Lee148aAAAAADRpC_FAxh9l2yGQ2j8aImdVqroG'
-
 
 # Application definition
 
