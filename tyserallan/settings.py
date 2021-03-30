@@ -153,7 +153,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 
-#gmail_send/settings.py
+# gmail_send/settings.py
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

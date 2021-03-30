@@ -10,4 +10,4 @@ urlpatterns = [
     path('contact/', views.ContactView, name='contact'),
     path('', HomePageView.as_view(), name='home'),
     path('accounts/', include('allauth.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
