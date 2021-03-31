@@ -16,7 +16,7 @@
 		        <form method="post">
                     {% csrf_token %}
                     {{form.as_p}}
-                    <script src="https://www.google.com/recaptcha/api.js"> </script>
+                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                     <div class="g-recaptcha" data-sitekey="6Lee148aAAAAAIXAn7tovPfLMs_Xl91NZD87hESh"></div>
             <div class="row no-gutters pb-5">
                 <div class="col-4 offset-4 d-flex justify-content-center">
