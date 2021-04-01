@@ -1,7 +1,7 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
-from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
+from crispy_forms.layout import Layout, Submit, HTML, Button, Field
+from crispy_forms.bootstrap import FormActions
 
 # Create your forms here.
 
@@ -12,7 +12,7 @@ class ContactForm(forms.Form):
     Email_Adress = forms.EmailField(required=True)
     Description = forms.CharField(widget=forms.Textarea, required=True)
 
-    radio_buttons = forms.ChoiceField(
+    Type = forms.ChoiceField(
         choices=(
             ('option_one', "Draping"),
             ('option_two', "Landscaping")
@@ -21,7 +21,7 @@ class ContactForm(forms.Form):
         initial='option_one',
     )
 
-    checkboxes = forms.MultipleChoiceField(
+    Work_Required = forms.MultipleChoiceField(
         choices=(
             ('option_one', "Garden Decking"),
             ('option_two', 'Garden Fencing'),
@@ -41,9 +41,10 @@ class ContactForm(forms.Form):
         Field('First_Name'),
         Field('Surname'),
         Field('Email_Adress', css_class='input-xlarge'),
-        'radio_buttons',
-        Field('checkboxes', style="background: #FAFAFA; padding: 10px;"),
-        Field('Description', rows="3", css_class='input-xlarge'),
+        'Type',
+        Field('Work_Required', style="background: #FAFAFA; padding: 10px;"),
+        Field('Description', rows="3", css_class='input-xlarge mb-3'),
+        HTML('<div class="g-recaptcha" data-sitekey="6Lee148aAAAAAIXAn7tovPfLMs_Xl91NZD87hESh"></div>'),
         FormActions(
             Submit('save_changes', 'Submit', css_class="btn-primary mb-3 mt-3"),
         )

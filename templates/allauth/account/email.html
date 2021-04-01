@@ -1,16 +1,19 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% load i18n %}
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
 {% block content %}
+<div class="row no-gutters">
+    <div class="col-8 offset-2">
     <h1>{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
 <form action="{% url 'account_email' %}" class="email_list" method="post">
 {% csrf_token %}
+{{ form | crispy }}
 <fieldset class="blockLabels">
 
   {% for emailaddress in user.emailaddress_set.all %}
@@ -53,7 +56,8 @@
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
-
+</div>
+</div>
 {% endblock %}
 
 

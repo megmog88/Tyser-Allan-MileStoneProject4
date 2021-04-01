@@ -10,10 +10,6 @@ class HomePageView(TemplateView):
     template_name = 'home.html'
 
 
-class DrapingPageView(TemplateView):
-    template_name = 'draping.html'
-
-
 class LandscapingPageView(TemplateView):
     template_name = 'landscaping.html'
 
@@ -24,11 +20,11 @@ def ContactView(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['from_email']
-            message = form.cleaned_data['message']
+            First_Name = form.cleaned_data['First_Name']
+            Email_Adress = form.cleaned_data['Email_Adress']
+            Description = form.cleaned_data['Description']
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+                send_mail(First_Name, Email_Adress, Description['tyserallan@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
