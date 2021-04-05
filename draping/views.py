@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Drape
 
 # Create your views here.
@@ -9,6 +9,6 @@ class DrapingListView(ListView):
     template_name = 'draping.html'
 
 
-class DrapingListInfoView(ListView):
+class DrapingDetailView(DetailView):
     model = Drape
     template_name = 'drapinginfo.html'
