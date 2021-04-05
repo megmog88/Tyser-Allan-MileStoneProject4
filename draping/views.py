@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
-
+from django.views.generic import ListView
+from .models import Drape
 
 # Create your views here.
-class DrapingPageView(TemplateView):
-    template_name = 'draping.html'
+
+
+class DrapeListView(ListView):
+    model = Drape
+    template_Name = 'draping.html'
