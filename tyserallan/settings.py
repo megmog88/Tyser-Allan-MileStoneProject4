@@ -158,7 +158,10 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 
 
-# gmail_send/settings.py
+# Media Roots
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
