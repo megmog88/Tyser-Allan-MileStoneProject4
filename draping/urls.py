@@ -1,6 +1,6 @@
-from django.urls import path, include
-from .views import DrapeListView
+from django.urls import path
+from .views import DrapingListView
 
 urlpatterns = [
-    path('', DrapeListView.as_view(), name='draping'),
+    path('draping', DrapingListView.as_view(), name='draping'),
 ]

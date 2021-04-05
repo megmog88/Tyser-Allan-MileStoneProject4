@@ -4,6 +4,6 @@ from .models import Drape
 # Create your views here.
 
 
-class DrapeListView(ListView):
+class DrapingListView(ListView):
     model = Drape
-    template_Name = 'draping.html'
+    template_name = 'draping.html'
