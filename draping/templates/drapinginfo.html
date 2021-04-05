@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+    {% block content %}
+        <div class="col-md-4 col-6">
+    {% for drapes in object_list %}
+    <div class="post-entry">
+        <h2>{{ drapes.title }}</h2>
+        <p>{{ drapes.body }}</p>
+
+    </div>
+    {% endfor %}
+
+    {% endblock %}

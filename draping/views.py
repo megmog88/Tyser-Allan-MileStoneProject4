@@ -7,3 +7,8 @@ from .models import Drape
 class DrapingListView(ListView):
     model = Drape
     template_name = 'draping.html'
+
+
+class DrapingListInfoView(ListView):
+    model = Drape
+    template_name = 'drapinginfo.html'
