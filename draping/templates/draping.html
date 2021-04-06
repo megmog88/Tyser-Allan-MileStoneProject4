@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
     {% block content %}
-    <div class="row no-gutters">
+    <div class="row no-gutters p-4">
         <div class="col-8 offset-2 justify-content-center d-flex">
             <h1>Event & Theatrical Draping</h1>
         </div>
@@ -15,9 +15,11 @@
 <div class="row no-gutters">
     {% for drapes in object_list %}
     <div class="col-4 justify-content-center d-flex post-entry p-4">
-        <img src="{{ drapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-50">
-    <div class="post-entry">
+        <img src="{{ drapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-50 h-75">
+<div class="row no-gutters">
+    <div class="post-entry col-4 justify-content-center d-flex p-4">
             <h2 class="linkstyle"><a href="{% url 'drapinginfo' drapes.pk %}">{{ drapes.title }}</a></h2>
+    </div>
     </div>
 
     </div>
