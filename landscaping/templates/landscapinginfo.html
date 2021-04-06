@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+    {% block content %}
+<div class="row no-gutters p-5">
+    <div class="col-10 offset-1 justify-content-center d-flex">
+        <h2>{{ object.title }}</h2>
+    </div>
+</div>
+<div class="row no-gutters p-2">
+    <div class="col-10 offset-1 justify-content-center d-flex">
+        <img src="{{ object.cover.url}}" alt="{{ object.title }}">
+    </div>
+</div>
+<div class="row no-gutters p-5">
+    <div class="col-8 offset-2 justify-content-center d-flex">
+        <p>{{ object.body }}</p>
+</div>
+</div>
+<div class="offset-4 col-4">
+            <a class="d-flex justify-content-center p-4 footer-button" href="{% url 'draping' %}">Back to Drapes</a>
+    </div>
+
+
+    {% endblock %}

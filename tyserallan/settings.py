@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'draping',
     'crispy_forms',
+    'landscaping',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
