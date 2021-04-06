@@ -40,3 +40,8 @@ body, header, footer {
     color: #7395AE;
 }
 
+/*----------------------Link Styling----*/
+
+.linkstyle:hover, .linkstyle:visited{
+    color: #379683;
+}

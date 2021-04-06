@@ -13,14 +13,14 @@
         </div>
     </div>
 <div class="row no-gutters">
-    <div class="col-md-4 col-6">
     {% for drapes in object_list %}
+    <div class="col-4 justify-content-center d-flex post-entry p-4">
+        <img src="{{ drapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-50">
     <div class="post-entry">
-        <ul>
-            <li><h2><a href="{% url 'drapinginfo' drapes.pk %}">{{ drapes.title }}</a></h2></li>
-        </ul>
+            <h2 class="linkstyle"><a href="{% url 'drapinginfo' drapes.pk %}">{{ drapes.title }}</a></h2>
+    </div>
+
     </div>
     {% endfor %}
-    </div>
     </div>
     {% endblock content %}
