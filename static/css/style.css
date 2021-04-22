@@ -35,7 +35,7 @@ body, header, footer {
 
 /*----------------------NavBar Settings---*/
 
-.navbar-brand, .navbar, .navbar-collapse, .navbar-nav {
+.navbar-custom{
     background-color: #5D5C61;
     color: #7395AE;
     border-color: #5D5C61;
