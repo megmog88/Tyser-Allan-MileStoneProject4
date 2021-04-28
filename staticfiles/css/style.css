@@ -33,9 +33,9 @@ body, header, footer {
     color: #5D5C61;
 }
 
-/*----------------------NavBar Settings---*/
+/*----------------------NavBar Styling---*/
 
-.navbar-brand, .navbar, .navbar-nav, .navbar-expand-lg, .navbar-toggler, .{
+.navbar-grey{
     background-color: #5D5C61;
     color: #7395AE;
     border-color: #5D5C61;
