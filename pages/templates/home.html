@@ -11,14 +11,7 @@
         </div>
         <div class="row no-gutters pb-3">
             <div class="col-10 offset-1">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                    </ol>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block w-100" src="{% static 'images/ptawnings.jpg' %}" alt="First slide">
@@ -27,8 +20,6 @@
                                 <p>Beautiful awnings put in place for the rainy days at a pub</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-inner">
                         <div class="carousel-item">
                             <img class="d-block w-100" src="{% static 'images/flowerterrace2.jpg' %}" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
@@ -36,8 +27,6 @@
                                 <p>Table, Chairs and Decking designed and built by us</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-inner">
                         <div class="carousel-item">
                             <img class="d-block w-100" src="{% static 'images/bigbraai.jpg' %}" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
@@ -45,8 +34,6 @@
                                 <p>Being South African we can even make commercial Braais</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-inner">
                         <div class="carousel-item">
                             <img class="d-block w-100" src="{% static 'images/manatwork.jpg' %}" alt="Fourth slide">
                             <div class="carousel-caption d-none d-md-block">
@@ -54,8 +41,6 @@
                                 <p>Jak of many trades showing his stuff</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-inner">
                         <div class="carousel-item">
                             <img class="d-block w-100" src="{% static 'images/shedfloorfence.jpg' %}" alt="Fith slide">
                             <div class="carousel-caption d-none d-md-block">
@@ -63,20 +48,20 @@
                                 <p>Beautiful awnings put in place for the rainy days at a pub</p>
                             </div>
                         </div>
+                        </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
-        </div>
-         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    </body>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        </body>
     {% endblock content %}
