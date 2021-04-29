@@ -46,5 +46,6 @@ body, header, footer {
 /*----------------------Link Styling----*/
 
 .linkstyle:hover, .linkstyle:visited, .linkstyle{
-    color: #5D5C61
+    color: #5D5C61;
+    text-decoration: none;
 }

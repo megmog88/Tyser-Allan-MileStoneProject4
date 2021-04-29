@@ -7,7 +7,7 @@
 </div>
 <div class="row no-gutters p-2">
     <div class="col-8 offset-2 justify-content-center d-flex">
-        <img src="{{ object.cover.url}}" alt="{{ object.title }}" class="img-fluid">
+        <img src="{{ object.cover.url}}" alt="{{ object.title }}" class="img-fluid rounded">
     </div>
 </div>
 <div class="row no-gutters p-5">
@@ -15,9 +15,10 @@
         <p>{{ object.body }}</p>
 </div>
 </div>
-<div class="offset-4 col-4 footer-button">
-            <a class="d-flex justify-content-center p-4 footer-button" href="{% url 'landscaping' %}">Back to Landscaping</a>
+<div class="row no-gutters">
+    <div class="justify-content-center d-flex">
+        <a class="d-inline justify-content-center p-4 footer-button linkstyle rounded" href="{% url 'landscaping' %}">Back to Landscaping</a>
     </div>
-
+</div>
 
     {% endblock %}

@@ -16,7 +16,7 @@
     {% for drapes in object_list %}
     <div class="col-4 justify-content-center d-flex post-entry">
         <div class="post-entry col-4">
-        <a href="{% url 'drapinginfo' drapes.pk %}"><img src="{{ drapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-100 h-50"></a>
+        <a href="{% url 'drapinginfo' drapes.pk %}"><img src="{{ drapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-100 h-50 img-thumbnail"></a>
             <h2>{{ drapes.title }}</h2>
         </div>
     </div>
