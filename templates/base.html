@@ -17,7 +17,7 @@
                 <img src="{% static 'images/talogo.png' %}" alt="My image" class="img-fluid h-100 w-25">
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-grey">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,17 +54,20 @@
     {% block content %}
     {% endblock content %}
 
-<footer>
-    <div class="row mt-4">
-        <div class="col-12 col-md-6 border justify-content-center d-flex">
+ <footer>
+    <div class="row no-gutters">
+        <div class="col-4 col-md-3 justify-content-center d-flex">
+                <img src="{% static 'images/talogo.png' %}" alt="My image" class="img-fluid h-75 w-50 w-sm-100">
+        </div>
+        <div class="col-8 col-md-3 justify-content-center d-flex">
             <ul>
                 <li>Tyser & Allan ltd</li>
                 <li>"Special Projects"</li>
-                <li>mark@tyserallan.com</li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-3">
-                <a class="btn btn-secondary d-flex justify-content-center p-4 footer-button" href="{% url 'contact' %}">Get a Quote</a>
+                <li>Mark Allan and Oliver Tyser</li>
+            </ul>
+        </div>
+            <div class="col-6 col-md-3 p-0 p-md-none">
+                <a class="linkstyle d-flex justify-content-center p-4 footer-button rounded" style="text-decoration: none;" href="{% url 'contact' %}">Get a Quote</a>
             </div>
         <div class="col-6 col-md-3">
             <a href="#" aria-hidden="true" target="_blank"><i class="fa fa-facebook-square p-2 d-inline justify-content-center"></i></a>

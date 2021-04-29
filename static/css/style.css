@@ -25,6 +25,11 @@ ul {
 
 }
 
+.footer-button:hover {
+    color: #379683;
+    background-color: #5D5C61;
+}
+
 
 
 /*----------------------Beautiful Colors---*/
