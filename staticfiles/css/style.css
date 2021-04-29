@@ -1,12 +1,5 @@
 
 /*----------------------Footer Styling---*/
-
-ul {
-  list-style-type: none;
-  color: black;
-  font-size: 20px;
-}
-
 .fa {
     font-size: 75px;
     color: #5D5C61;
@@ -25,6 +18,11 @@ ul {
 
 }
 
+.footer-button:hover {
+    color: #379683;
+    background-color: #5D5C61;
+}
+
 
 
 /*----------------------Beautiful Colors---*/
@@ -39,8 +37,10 @@ body, header, footer {
     background-color: #5D5C61;
     color: #7395AE;
     border-color: #5D5C61;
-    padding: 0;
-    margin: 0;
+    padding: 2;
+    margin: 2;
+    font-size: large;
+
 }
 
 /*----------------------Link Styling----*/
