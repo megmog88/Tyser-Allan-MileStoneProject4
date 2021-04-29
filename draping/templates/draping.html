@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
     {% block content %}
     <div class="row no-gutters p-4">
-        <div class="col-8 offset-2 justify-content-center d-flex">
+        <div class="col-12 col-sm-8 offset-sm-2 justify-content-center d-flex">
             <h1>Event & Theatrical Draping</h1>
         </div>
-        <div class="col-8 offset-2 justify-content-center d-flex">
+        <div class="col-12 col-sm-8 offset-sm-2 justify-content-center d-flex">
             <p>We are proud to be able to offer Event & Theatrical draping. Whether you are hosting a private party or trying to cover
             up those dinosaurs at The Natural History Museum we have got you covered. See below a variety of different kinds of draping
             we have available, if interested or need more information please request a quote and we will endeavour to get back to you. 
@@ -14,12 +14,12 @@
     </div>
 <div class="row no-gutters">
     {% for drapes in object_list %}
-    <div class="col-4 justify-content-center d-flex post-entry">
-        <div class="post-entry col-4">
+    <div class="col-5 col-sm-4 justify-content-center d-flex post-entry">
+        <div class="post-entry col-5 col-sm-4">
         <a href="{% url 'drapinginfo' drapes.pk %}"><img src="{{ drapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-100 h-50 img-thumbnail"></a>
-            <h2>{{ drapes.title }}</h2>
+            <p>{{ drapes.title }}</p>
         </div>
     </div>
     {% endfor %}
-    </div>
+</div>
     {% endblock content %}

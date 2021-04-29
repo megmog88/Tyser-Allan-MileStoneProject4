@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
     {% block content %}
     <div class="row no-gutters p-4">
-        <div class="col-8 offset-2 justify-content-center d-flex">
+        <div class="col-12 col-sm-8 offset-sm-2 justify-content-center d-flex">
             <h1>Landscaping</h1>
         </div>
-        <div class="col-8 offset-2 justify-content-center d-flex">
+        <div class="col-12 col-sm-8 offset-sm-2 justify-content-center d-flex">
             <p>We do a varied amount of hard and soft landscaping, see below a few of our favourite of many projects that we do.
             We specialise with the use of cedar timber as we like the finish but are not limited to this. Over the years of designing
             and getting stuck into projects the world is our oyster. Have a look at what we can do and head over to our quote page 
@@ -14,12 +14,12 @@
     </div>
 <div class="row no-gutters">
     {% for landscapes in object_list %}
-    <div class="col-4 justify-content-center d-flex post-entry">
-        <div class="post-entry col-4">
+    <div class="col-5 col-sm-4 justify-content-center d-flex post-entry">
+        <div class="post-entry col-5 col-sm-4">
         <a href="{% url 'landscapinginfo' landscapes.pk %}"><img src="{{ landscapes.cover.url }}" alt="{{ object.title }}" class="img-fluid w-100 h-50 img-thumbnail"></a>
-            <h2>{{ landscapes.title }}</h2>
+            <p>{{ landscapes.title }}</p>
         </div>
     </div>
     {% endfor %}
-    </div>
+</div>
     {% endblock content %}
