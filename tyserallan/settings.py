@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'draping',
     'crispy_forms',
     'landscaping',
-]
+    'shoppingbag', ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -184,3 +184,8 @@ GOOGLE_RECAPTCHA_SECRET_KEY = env('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 
 # Configure Django App for Heroku.
+
+# Delivery Thresholds
+
+
+FREE_DELIVERY_THRESHOLD = 500

@@ -7,14 +7,6 @@ class SimpleTests(SimpleTestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
-    def test_draping_page_status_code(self):
-        response = self.client.get('/draping/')
-        self.assertEqual(response.status_code, 200)
-
-    def test_landscaping_page_status_code(self):
-        response = self.client.get('/landscaping/')
-        self.assertEqual(response.status_code, 200)
-
     def test_home_merchandise_status_code(self):
         response = self.client.get('/merchandise/')
         self.assertEqual(response.status_code, 200)

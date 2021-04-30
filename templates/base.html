@@ -43,6 +43,7 @@
             <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
             <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+            <li> <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_shoppingbag' %}">Shopping Bag</a></li>
           </ul>
         </li>
         <li class="nav-item">

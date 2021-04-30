@@ -1,4 +1,65 @@
 {% extends 'base.html' %}
     {% block content %}
-    <h1>Merch</h1>
+        <div class="row no-gutters p-4">
+        <div class="col-12 col-sm-8 offset-sm-2 justify-content-center d-flex">
+            <h1>Merchandise</h1>
+        </div>
+        <div class="col-12 col-sm-8 offset-sm-2 justify-content-center d-flex">
+            <p>Buy our products today and we will deliver within 2 working days straight to your door. Tired of spending
+            money on expensive labour, we go you covered. Time to get your hands dirty(well we have done the hard part for you)
+            Enjoy making our well thought out designs or be creative and send us your measurements.
+            </p>
+        </div>
+    </div>
+<div class="row">
+            <div class="col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for merchandise in object_list %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card h-100 border-0">
+                                {% if merchandise.cover.url %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid w-100 h-100" src="{{ merchandise.cover.url }}" alt="{{ merchandise.title }}">
+                                </a>
+                                {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ merchandise.name }}">
+                                </a>
+                                {% endif %}
+                                <div class="card-body pb-0">
+                                    <h5 class="mb-0">{{ merchandise.title }}</h5>
+                                    <p class="mb-0">{{ merchandise.description}}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ merchandise.price }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+</div>
     {% endblock content %}

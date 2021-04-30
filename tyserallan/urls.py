@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts', include('allauth.urls')),
     path('', include('draping.urls')),
     path('', include('landscaping.urls')),
+    path('shoppingbag/', include('shoppingbag.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

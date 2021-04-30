@@ -6,7 +6,8 @@ from django.db import models
 class Merchandise(models.Model):
     title = models.CharField(max_length=200)
     cover = models.ImageField('media/images/')
-    body = models.TextField()
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
         return self.title
