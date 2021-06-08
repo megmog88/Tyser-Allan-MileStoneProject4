@@ -19,7 +19,7 @@
             <div class="row no-gutters">
                     {% for merchandise in object_list %}
                 <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                    <div class="card h-100 border-0">
+                    <div class="card h-100 border-10">
                         <img class="card-img-top img-fluid w-100" src="{{ merchandise.cover.url }}" alt="{{ merchandise.title }}">
                         <div class="card-body">
                             <h5 class="mb-0">{{ merchandise.title }}</h5>
@@ -30,7 +30,10 @@
                                             {% with merchandise.different_sizes as s %}
                             {% if s %}
                                 <div class="col-12">
+                                    <div class="col-6">
                                     <p><strong>SIZES:</strong></p>
+                                    </div>
+                                    <div class="col-6">
                                     <select class="form-control rounded-0 w-50" name="different_sizes" id="id_different_sizes">
                                         <option value="xs">10cm x 100cm</option>
                                         <option value="s">15cm x 100cm</option>
@@ -39,22 +42,22 @@
                                         <option value="xl">40cm x 120cm</option>
                                     </select>
                                 </div>
+                                </div>
                             {% endif %}
                             {% endwith %}
                                             <div class="col-12">
                                                 
                                                 <div class="form-group">
-                                                    <p class="mb-3"> Quantity:
                                                     <div class="input-group">
+                                                    <p class="mb-3"> Quantity:
                                                         <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ merchandise.id }}" id="id_qty_{{ merchandise.id }}">
+                                                        <input type="submit" class="btn btn-black text-uppercase" value="Add to Bag">
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                                     </div>
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
-                                                <input type="submit" class="btn btn-black text-uppercase" value="Add to Bag">
-                                        
-                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </form>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
