@@ -1,1 +1,1 @@
-web: gunicorn tyserallan.wsgi
+web: gunicorn tyser-allan.wsgi
