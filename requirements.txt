@@ -10,7 +10,7 @@ django-environ==0.4.5
 django-heroku==0.3.1
 environs==8.0.0
 Flask==1.1.2
-gunicorn==19.9.0
+gunicorn @ git+https://github.com/benoitc/gunicorn.git@cf55d2cec277f220ebd605989ce78ad1bb553c46
 itsdangerous==1.1.0
 marshmallow==3.12.1
 oauthlib==3.1.0

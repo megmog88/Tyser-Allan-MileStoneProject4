@@ -1,1 +1,1 @@
-web: gunicorn tyserallan.wsgi
+web: gunicorn tyserallan.wsgi --log-file--
