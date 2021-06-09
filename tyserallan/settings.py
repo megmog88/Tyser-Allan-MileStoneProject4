@@ -135,6 +135,7 @@ USE_TZ = True
 # Activate Django-Heroku.
 
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
