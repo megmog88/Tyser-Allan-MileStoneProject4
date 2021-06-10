@@ -96,8 +96,21 @@ WSGI_APPLICATION = 'tyserallan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# if 'DATABASE_URL' in os.environ:
+#    DATABASES = {
+#        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#    }
+# else:
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        }
+#    }
+
+
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL")
+    'default': dj_database_url.parse('postgres://miwcvvcdmbtxfc:348fe5c46d2a6e7edad7067a63e5bc06d27dcb32aa8b0ba5aec1035d05400763@ec2-54-228-99-58.eu-west-1.compute.amazonaws.com:5432/d26otuu7falrh2')
 }
 
 # Password validation
@@ -134,8 +147,8 @@ USE_TZ = True
 
 # Activate Django-Heroku.
 
-django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
+# django_heroku.settings(locals())
+# del DATABASES['default']['OPTIONS']['sslmode']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
