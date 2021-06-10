@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="row no-gutters p-2">
-    <div class="col-5 offset-1 justify-content-center d-flex">
+    <div class="col-6 col-sm-3 offset-sm-2 justify-content-center d-flex">
         <img src="{{ object.cover.url}}" alt="{{ object.title }}" class="img-fluid rounded">
     </div>
     <div class="col-6 justify-content-center d-flex">
@@ -14,8 +14,10 @@
     </div>
 </div>
 <div class="row no-gutters pb-4">
-    <div class="justify-content-center d-flex">
-        <a style="text-decoration: none;" class="d-inline justify-content-center p-4 footer-button linkstyle rounded" href="{% url 'landscaping' %}">Back to Landscaping</a>
+    <div class="offset-4 col-4">
+        <div class="justify-content-center d-flex">
+            <a style="text-decoration: none;" class="d-flex justify-content-center p-2 footer-button linkstyle rounded" href="{% url 'landscaping' %}">Landscaping</a>
+        </div>
     </div>
 </div>
 
