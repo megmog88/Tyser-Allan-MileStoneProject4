@@ -110,7 +110,8 @@ WSGI_APPLICATION = 'tyserallan.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://miwcvvcdmbtxfc:348fe5c46d2a6e7edad7067a63e5bc06d27dcb32aa8b0ba5aec1035d05400763@ec2-54-228-99-58.eu-west-1.compute.amazonaws.com:5432/d26otuu7falrh2')
+    'default': env.dj_db_url("DATABASE_URL")
+    
 }
 
 # Password validation
@@ -182,14 +183,14 @@ LOGIN_URL = '/accounts/login/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-#EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_USE_TLS = True
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-#EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS')
-#DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS')
+DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 
 # Google ReCaptcha
 
