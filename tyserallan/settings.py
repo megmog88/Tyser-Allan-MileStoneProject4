@@ -54,8 +54,8 @@ INSTALLED_APPS = [
     'draping',
     'crispy_forms',
     'landscaping',
-    'shoppingbag',
-    'checkout']
+    'shoppingbag.apps.ShoppingbagConfig',
+    ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -193,10 +193,11 @@ DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 # Stripe Keys
 
 
-STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
+STRIPE_PUBLISHABLE_KEY = 'pk_live_51J0z9rGPlg2qv8pjrrMspZQtlwFl0LWg2DpS9Aqirb4WJKLzPFWdpOAmUF6chaJ2KkVi41zfLV3ofgZ4e25bUxxR007oT931EA'
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+
 # Delivery Thresholds
 
 
 FREE_DELIVERY_THRESHOLD = 500
-STANDARD_DELIVERY_PERCENTAGE = 300
+STANDARD_DELIVERY_PERCENTAGE = 10
