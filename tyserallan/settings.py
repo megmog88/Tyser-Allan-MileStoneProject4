@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'draping',
     'crispy_forms',
     'landscaping',
-    'shoppingbag', ]
+    'shoppingbag',]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -185,8 +185,9 @@ DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 
 # Google ReCaptcha
 
-#GOOGLE_RECAPTCHA_SECRET_KEY = env('GOOGLE_RECAPTCHA_SECRET_KEY')
+RECAPTCHA_SECRET_KEY = env.str('RECAPTCHA_PRIVATE_KEY')
 
+RECAPTCHA_SITE_KEY = "6LcC7SQbAAAAAB7RHbbn0NGpDOOF8Um5om_EdEcB"
 
 # Configure Django App for Heroku.
 

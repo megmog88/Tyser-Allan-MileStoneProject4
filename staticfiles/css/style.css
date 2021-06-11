@@ -20,7 +20,7 @@
 
 .footer-button:hover {
     color: #379683;
-    background-color: #5D5C61;
+    background-color: #7395AE;
 }
 
 
@@ -34,7 +34,7 @@ body, header, footer {
 /*----------------------NavBar Styling---*/
 
 .navbar-grey{
-    background-color: #5D5C61;
+    background-color: #b1a296;
     color: #7395AE;
     border-color: #5D5C61;
     padding: 2;

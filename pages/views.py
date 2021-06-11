@@ -3,7 +3,11 @@ from django.views.generic import TemplateView
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .forms import ContactForm
+from django.conf import settings
 
+
+def index(request):
+    return render(request, 'index.html', {'site_key': settings.RECAPTCHA_SITE_KEY})
 
 # Create your views here.
 class HomePageView(TemplateView):

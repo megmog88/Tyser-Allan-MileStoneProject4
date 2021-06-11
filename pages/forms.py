@@ -5,7 +5,6 @@ from crispy_forms.bootstrap import FormActions
 
 # Create your forms here.
 
-
 class ContactForm(forms.Form):
     First_Name = forms.CharField(required=True)
     Surname = forms.CharField(required=True)
