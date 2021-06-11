@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'draping',
     'crispy_forms',
     'landscaping',
-    'shoppingbag',]
+    'shoppingbag',
+    'checkout']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -189,8 +190,11 @@ DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 
 #RECAPTCHA_SITE_KEY = "6LcC7SQbAAAAAB7RHbbn0NGpDOOF8Um5om_EdEcB"
 
-# Configure Django App for Heroku.
+# Stripe Keys
 
+
+STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 # Delivery Thresholds
 
 

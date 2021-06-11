@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Merchandise
 
 # Create your views here.
@@ -11,3 +11,4 @@ class MerchandiseListView(ListView):
 class MerchandiseDetailView(DetailView):
     model = Merchandise
     template_name = 'merchandiseinfo.html'
+

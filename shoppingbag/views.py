@@ -1,4 +1,10 @@
 from django.shortcuts import render, redirect, reverse
+import stripe
+from django.conf import settings
+from django.http import JsonResponse, HttpRequest
+from django.views import View
+from merchandise.models import Merchandise
+from django.views.generic import TemplateView
 
 # Create your views here.
 
@@ -81,3 +87,53 @@ def remove_shoppingbag(request, item_id):
 
     except Exception as e:
         return HttpResponse(status=500)
+
+def create_checkout_session(request: HttpRequest):
+ 
+    customer = ... # get customer model based off request.user
+ 
+    if request.method == 'POST':
+ 
+        # Assign product price_id, to support multiple products you 
+        # can include a product indicator in the incoming POST data
+        price_id = ...
+ 
+        # Set Stripe API key
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+ 
+        # Create Stripe Checkout session
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            mode="subscription",
+            line_items=[
+                {
+                    "price": price_id,
+                    "quantity": 1
+                }
+            ],
+            customer=customer.id,
+            success_url=f"https://YOURDOMAIN.com/payment/success?sessid={{CHECKOUT_SESSION_ID}}",
+            cancel_url=f"https://YOURDOMAIN.com/payment/cancel", # The cancel_url is typically set to the original product page
+        )
+ 
+    return JsonResponse({'sessionId': checkout_session['id']})
+
+
+class SuccessView(TemplateView):
+    template_name = "success.html"
+
+
+class CancelView(TemplateView):
+    template_name = "cancel.html"
+
+class MerchandiseLandingPageView(TemplateView):
+    template_name = "merchandise.html"
+
+    def get_context_data(self, **kwargs):
+        merchandise = Merchandise.objects
+        context = super(MerchandiseLandingPageView, self).get_context_data(**kwargs)
+        context.update({
+            "merchandise": merchandise,
+            "STRIPE_PUBLIC_KEY": settings.STRIPE_PUBLIC_KEY
+        })
+        return context
