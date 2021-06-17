@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'landscaping',
     'shoppingbag.apps.ShoppingbagConfig',
+    'stripe',
     ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -77,6 +78,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'templates', 'allauth'),
+                 'templates',
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -193,7 +195,8 @@ DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 # Stripe Keys
 
 
-STRIPE_PUBLISHABLE_KEY = 'pk_live_51J0z9rGPlg2qv8pjrrMspZQtlwFl0LWg2DpS9Aqirb4WJKLzPFWdpOAmUF6chaJ2KkVi41zfLV3ofgZ4e25bUxxR007oT931EA'
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 
 # Delivery Thresholds

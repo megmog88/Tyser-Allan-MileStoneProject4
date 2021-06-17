@@ -83,14 +83,14 @@
 
  <footer>
     <div class="row no-gutters">
-        <div class="col-4 col-md-3 justify-content-center d-flex">
-                <img src="{% static 'images/talogo.png' %}" alt="My image" class="img-fluid h-75 w-75 w-sm-50">
-        </div>
         <div class="col-8 col-md-3 justify-content-center d-flex">
-            <h4>Bought to you by Mark Allan and Oliver Tyser. We accept payment in beer or cold hard cash!</h4>
+            <p><i class="fa fa-copyright"></i>2021 Copyright Tyser&Allan</p>
         </div>
-            <div class="col-6 col-md-3 p-0 p-md-none">
-                <a class="linkstyle d-flex justify-content-center p-4 footer-button rounded" style="text-decoration: none;" href="{% url 'contact' %}">Get a Quote</a>
+        <div class="col-4 col-md-3 justify-content-center d-flex">
+                <img src="{% static 'images/talogo.png' %}" alt="My image" class="img-fluid h-75 w-50 w-sm-50 d-flex justify-content-center">
+        </div>
+            <div class="col-6 col-md-3 p-0 mt-2 p-md-none">
+                <a class="linkstyle d-flex justify-content-center p-2 footer-button rounded" style="text-decoration: none;" href="{% url 'contact' %}">Get a Quote</a>
             </div>
         <div class="col-6 col-md-3">
             <a href="#" aria-hidden="true" target="_blank"><i class="fa fa-facebook-square p-2 d-inline justify-content-center"></i></a>
