@@ -8,23 +8,26 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+class ShoppingbagPageView(TemplateView):
+    template_name = 'shoppingbag.html'
 
-def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    context['key'] = settings.STRIPE_PUBLISHABLE_KEY
-    return context
+#stripe.api_key = settings.STRIPE_SECRET_KEY
+
+#def get_context_data(self, **kwargs):
+#    context = super().get_context_data(**kwargs)
+#    context['key'] = settings.STRIPE_PUBLISHABLE_KEY
+#    return context
 
 
-def charge(request): # new
-    if request.method == 'POST':
-        charge = stripe.Charge.create(
-            amount=0,
-            currency='gbp',
-            description='Tyser&Allan Charge',
-            source=request.POST['stripeToken']
-        )
-        return render(request, 'charge.html')
+#def charge(request): # new
+#    if request.method == 'POST':
+#        charge = stripe.Charge.create(
+#            amount=0,
+#            currency='gbp',
+#            description='Tyser&Allan Charge',
+#            source=request.POST['stripeToken']
+#        )
+#        return render(request, 'charge.html')
 
 
 def view_shoppingbag(request):

@@ -54,8 +54,8 @@ INSTALLED_APPS = [
     'draping',
     'crispy_forms',
     'landscaping',
-    'shoppingbag.apps.ShoppingbagConfig',
     'stripe',
+    'shoppingbag.apps.ShoppingbagConfig'
     ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

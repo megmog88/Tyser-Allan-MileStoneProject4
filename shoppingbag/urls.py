@@ -7,6 +7,7 @@ urlpatterns = [
     path('add/<item_id>/', views.add_to_shoppingbag, name='add_to_shoppingbag'),
     path('modify/<item_id>/', views.modify_shoppingbag, name='modify_shoppingbag'),
     path('remove/<item_id>/', views.remove_shoppingbag, name='remove_shoppingbag'),
-    path('charge/', views.charge, name='charge'),
-
+    path('', views.ShoppingbagPageView.as_view(), name='shoppingbag'),
 ]
+
+# path('charge/', views.charge, name='charge'),

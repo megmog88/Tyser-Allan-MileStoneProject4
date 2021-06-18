@@ -82,18 +82,15 @@
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
                                     {% csrf_token %}
-                                    <form action="{% url 'charge' %}" method="post">
-                
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="{{ key }}"
-          data-description="Tyser&Allan Charge"
-          data-amount="{{ total }}"
-          data-locale="auto"></script>
-</form>
+
                                 </td>
                             </tr>
                         </table>
                     </div>
+                    {% load static %}
+                     <div class="container">
+      <button class="button is-primary" id="submitBtn">Purchase!</button>
+    </div>
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'merchandise' %}" class="btn btn-outline-black rounded-0 btn-lg">
