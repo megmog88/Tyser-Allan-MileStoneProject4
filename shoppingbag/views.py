@@ -11,6 +11,34 @@ from django.views.generic import TemplateView
 class ShoppingbagPageView(TemplateView):
     template_name = 'shoppingbag.html'
 
+def stripe_config(request):
+    if request.method == 'GET':
+        stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
+        return JsonResponse(stripe_config, safe=False)
+
+def create_checkout_session(request):
+    if request.method == 'GET':
+        domain_url = 'http://localhost:8000/'
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        try:
+            checkout_session = stripe.checkout.Session.create(
+                success_url=domain_url + 'success?session_id={CHECKOUT_SESSION_ID}',
+                cancel_url=domain_url + 'cancelled/',
+                payment_method_types=['card'],
+                mode='payment',
+                line_items=[
+                    {
+                        'name': 'T-shirt',
+                        'quantity': 1,
+                        'currency': 'gbp',
+                        'amount': '2000',
+                    }
+                ]
+            )
+            return JsonResponse({'sessionId': checkout_session['id']})
+        except Exception as e:
+            return JsonResponse({'error': str(e)})
+
 #stripe.api_key = settings.STRIPE_SECRET_KEY
 
 #def get_context_data(self, **kwargs):
