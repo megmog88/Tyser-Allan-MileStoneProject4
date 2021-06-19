@@ -13,38 +13,10 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def payment_form(request):
 
-    context = { "stripe_key": settings.STRIPE_PUBLIC_KEY }
+    context = { "pk_test_51J0z9rGPlg2qv8pjaAyxq9wS7ZU0VkHz4hHn0tdHUmeXxyVieqCIrbxLOHycmQOhIQKzCP90QArzRC0BMM4zFxql00mVGsnXnl": settings.STRIPE_PUBLIC_KEY }
     return render(request, "shoppingbag.html", context)
 
-def checkout(request):
-    if request.method == "POST":
-        token    = request.POST.get("stripeToken")
 
-    try:
-        charge  = stripe.Charge.create(
-            amount      = {{ grand_total }},
-            currency    = "gbp",
-            source      = token,
-            description = "The product charged to the user"
-        )
-
-        merchandise.charge_id   = charge.id
-
-    except stripe.error.CardError as ce:
-        return False, ce
-
-    else:
-        new_car.save()
-        return redirect("thank_you_page")
-
-    def get_context_data(self, **kwargs):
-        merchandise = Merchandise.objects.get(name="Test Product")
-        context = super(ShoppingBagPageView, self).get_context_data(**kwargs)
-        context.update({
-            "merchandise": merchandise,
-            "STRIPE_PUBLIC_KEY": settings.STRIPE_PUBLIC_KEY
-        })
-        return context
 
 def view_shoppingbag(request):
     """ A view that renders the guests shopping bag """
