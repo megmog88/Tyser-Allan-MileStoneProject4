@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'landscaping',
     'stripe',
-    'shoppingbag.apps.ShoppingbagConfig'
+    'shoppingbag.apps.ShoppingbagConfig',
     ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -195,7 +195,7 @@ DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 # Stripe Keys
 
 
-STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
 
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 
