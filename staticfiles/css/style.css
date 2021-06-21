@@ -1,13 +1,12 @@
 
 /*----------------------Footer Styling---*/
-.fa {
-    font-size:16px;
-    color: #5D5C61;
+.fab, .fa {
+    color: #7395ae;
 
 }
 
-.fa:hover{
-    color: #379683;}
+.fab:hover, .fa:hover {
+    color: #7395AE}
 
 .footer-button {
     background-color: #7395AE;

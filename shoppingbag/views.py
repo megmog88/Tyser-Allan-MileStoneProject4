@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 import stripe
 from django.conf import settings
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpRequest
 from django.views import View
 from merchandise.models import Merchandise
 from django.views.generic import TemplateView
@@ -11,11 +11,35 @@ from django.views.generic import TemplateView
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-def payment_form(request):
+stripe.api_key = 'sk_test_51J0z9rGPlg2qv8pjSe6AaOP3N618aC0yFl6C1XeOrpsK9rhR55lqbm2EPuxlknpKQluo4BpHW4qiey97Vs3mpVBw00DRG6QXjX'
 
-    context = { "pk_test_51J0z9rGPlg2qv8pjaAyxq9wS7ZU0VkHz4hHn0tdHUmeXxyVieqCIrbxLOHycmQOhIQKzCP90QArzRC0BMM4zFxql00mVGsnXnl": settings.STRIPE_PUBLIC_KEY }
-    return render(request, "shoppingbag.html", context)
+YOUR_DOMAIN = 'http://localhost:4242'
 
+def create_checkout_session():
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            line_items=[
+                {
+                    'price_data': {
+                        'currency': 'usd',
+                        'unit_amount': "{{grand_total}}",
+                        'product_data': {
+                            'name': 'My Merchandise',
+                            'images': ['https://i.imgur.com/EHyR2nP.png'],
+                        },
+                    },
+                    'quantity': 1,
+                },
+            ],
+            mode='payment',
+            success_url=YOUR_DOMAIN + '/success.html',
+            cancel_url=YOUR_DOMAIN + '/cancel.html',
+        )
+        return jsonify({'id': checkout_session.id})
+    except Exception as e:
+        return jsonify(error=str(e)), 403
+    
 
 def view_shoppingbag(request):
     """ A view that renders the guests shopping bag """

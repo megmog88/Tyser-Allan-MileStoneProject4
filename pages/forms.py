@@ -2,6 +2,7 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, HTML, Button, Field
 from crispy_forms.bootstrap import FormActions
+from captcha.fields import ReCaptchaField
 
 # Create your forms here.
 
@@ -43,8 +44,5 @@ class ContactForm(forms.Form):
         'Type',
         Field('Work_Required', style="background: #FAFAFA; padding: 10px;"),
         Field('Description', rows="3", css_class='input-xlarge mb-3'),
-        HTML('<div class="g-recaptcha" data-sitekey="6Lee148aAAAAAIXAn7tovPfLMs_Xl91NZD87hESh"></div>'),
-        FormActions(
-            Submit('save_changes', 'Submit', css_class="btn-primary mb-3 mt-3"),
-        )
     )
+    captcha = ReCaptchaField()

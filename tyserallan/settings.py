@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'landscaping',
     'stripe',
     'shoppingbag.apps.ShoppingbagConfig',
+    'captcha',
     ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -69,7 +70,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
+
+REQUIRE_LOGIN_PUBLIC_URLS = (
+    'merchandise',
+    'shoppingbag',
+)
 
 ROOT_URLCONF = 'tyserallan.urls'
 
@@ -170,6 +177,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Media Roots
@@ -188,9 +196,11 @@ DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
 
 # Google ReCaptcha
 
-#RECAPTCHA_SECRET_KEY = env.str('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_SECRET_KEY = env.str('RECAPTCHA_PRIVATE_KEY')
 
-#RECAPTCHA_SITE_KEY = "6LcC7SQbAAAAAB7RHbbn0NGpDOOF8Um5om_EdEcB"
+RECAPTCHA_SITE_KEY = "6Lee148aAAAAAIXAn7tovPfLMs_Xl91NZD87hESh"
+
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Stripe Keys
 
