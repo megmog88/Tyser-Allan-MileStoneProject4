@@ -10,16 +10,16 @@
     color: #379683;}
 
 .footer-button {
-    background-color: #379683;
+    background-color: #7395AE;
     color: #5D5C61;
     text-emphasis: bold;
-    font-size: 16px;
+    font-size: 24px;
     text-transform: uppercase;
 
 }
 
 .footer-button:hover {
-    color: #379683;
+    color: #7395AE;
     background-color: #5D5C61;
 }
 
@@ -34,9 +34,8 @@ body, header, footer {
 /*----------------------NavBar Styling---*/
 
 .navbar-grey{
-    background-color: lightskyblue;
-    color: #7395AE;
-    border-color: #5D5C61;
+    background-color: #7395AE;
+    color: #5D5C61;
     padding: 2;
     margin: 2;
     font-size: large;

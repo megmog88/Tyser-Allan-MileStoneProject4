@@ -17,11 +17,11 @@ def payment_form(request):
     return render(request, "shoppingbag.html", context)
 
 
-
 def view_shoppingbag(request):
     """ A view that renders the guests shopping bag """
 
     return render(request, 'shoppingbag/shoppingbag.html')
+
 
 def view_shoppingbag(request):
     """ A view that renders the guests shopping bag """
