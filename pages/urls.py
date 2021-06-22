@@ -6,4 +6,5 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('', HomePageView.as_view(), name='home'),
     path('accounts/', include('allauth.urls')),
+    path('success/', views.contact, name='success'),
 ]

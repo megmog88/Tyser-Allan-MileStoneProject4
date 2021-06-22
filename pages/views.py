@@ -6,6 +6,7 @@ from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
 
+
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -31,19 +32,5 @@ def contact(request):
 	form = ContactForm()
 	return render(request, "contact.html", {'form':form})
 
-
-class SuccessMessageMixin:
-    """
-    Add a success message on successful form submission.
-    """
-    success_message = 'AMAZING'
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        success_message = self.get_success_message(form.cleaned_data)
-        if success_message:
-            messages.success(self.request, success_message)
-        return response
-
-    def get_success_message(self, cleaned_data):
-        return self.success_message % cleaned_data
+def get_success_url(self):
+    return reverse_lazy('app_name:data-update')
