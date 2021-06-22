@@ -102,6 +102,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tyserallan.wsgi.application'
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

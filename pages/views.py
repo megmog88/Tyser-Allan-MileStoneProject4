@@ -24,7 +24,6 @@ def contact(request):
 			'Description':form.cleaned_data['Description'],
 			}
 			message = "\n".join(body.values())
-
 			try:
 				send_mail(subject, message, 'Email_Adress', ['tyserallan@gmail.com'])
 			except BadHeaderError:
@@ -32,5 +31,4 @@ def contact(request):
 	form = ContactForm()
 	return render(request, "contact.html", {'form':form})
 
-def get_success_url(self):
-    return reverse_lazy('app_name:data-update')
+

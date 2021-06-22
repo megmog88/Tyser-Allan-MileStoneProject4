@@ -1,4 +1,4 @@
-![Logo](pages/static/images/talogo.png)
+![Logo](static/images/talogo.png)
 
 # MileStone Project Four- Tyser&Allan "Special Projects"
 
@@ -50,15 +50,28 @@ The goals for the business are
 
 ### Color scheme
 
-![Color Scheme](static/images/Colors.png)
+![Color Scheme](static/images/colors.PNG)
+
+I used a calming neutral set of colors as seen in the image. These colors are inline with
+the brand and allow ease of use looking at the site. The color codes are as follows.
+#7395AE
+#5D5C61
+#b1a296
+
+I moved away from the green color from this picture as it wasn't very pleasing to the eye.
+
 ### Typogrophy
-
+Robotto, it works perfectly for my project as I didn't need anything fancy.
 ## Features
-
+* Home page- A nice and simple page explaing a little about the company and how it works.
+* Draping- Explaing the different kind of drapes that we do
+* Landscaping- Explaing different kinds of lnadscaping jobs that we do
+* Merchandise- Allows the customer to add items to tehir basket and purchase them.
+* Contact Form- Allow customers to email us specifications for a quote.
 ### 
 
 ## Features Left to Implement
-
+* I would like to implement a Trust Pilot, so customers can leave realtime reviews.
 ###
 
 ## Technologies Used
@@ -70,13 +83,14 @@ Below is a list of all technologies used in order to achieve the end goal.
 * JavaScript - A text based programming language used to make a web page
 interactive, in conjunction with HTML and CSS as a base for formatting.
 * Python- for functionality of my site
-* Django
+* Django- Full Stack FrameWork. 
 
 #### Frameworks
 * Bootstrap- Used to format and style my site.
 * Flask- Micro framework for python
 * MongoDB- to store my database
-* Cloudinary- to store my photos and get a url for each of them to link to database
+* SQlite- as my database locally
+* Postgress- as my database deployed.
 
 #### Libraries
 * Google Fonts [https://fonts.google.com/]
@@ -84,6 +98,7 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 * Bootstrap Jquery [https://getbootstrap.com/docs/3.3/javascript/]
 * W3 Schools [https://www.w3schools.com/] a great base to get refresher materialswhen help was needed.
 * Youtube [https://www.youtube.com/] for some tutorials when things where tough
+* 
 
 ##### GitPod/GitHub
 * GitPod was the IDE I used for my project
@@ -96,3 +111,7 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 ## Deployment
 
 ## Credits
+* Oliver Tyser and Mark Allan for allowing me to use their images and company to make a website.
+* Jak of all trades for constant support and pressure to get this done.
+* Code Institute!
+* My mentor Maranatha 
