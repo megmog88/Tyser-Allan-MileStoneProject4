@@ -5,7 +5,7 @@ from django.http import JsonResponse, HttpRequest
 from django.views import View
 from merchandise.models import Merchandise
 from django.views.generic import TemplateView
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -15,23 +15,11 @@ stripe.api_key = 'sk_test_51J0z9rGPlg2qv8pjSe6AaOP3N618aC0yFl6C1XeOrpsK9rhR55lqb
 
 YOUR_DOMAIN = 'http://localhost:4242'
 
+@login_required
 def create_checkout_session():
     try:
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
-            line_items=[
-                {
-                    'price_data': {
-                        'currency': 'usd',
-                        'unit_amount': "{{grand_total}}",
-                        'product_data': {
-                            'name': 'My Merchandise',
-                            'images': ['https://i.imgur.com/EHyR2nP.png'],
-                        },
-                    },
-                    'quantity': 1,
-                },
-            ],
             mode='payment',
             success_url=YOUR_DOMAIN + '/success.html',
             cancel_url=YOUR_DOMAIN + '/cancel.html',
@@ -39,20 +27,15 @@ def create_checkout_session():
         return jsonify({'id': checkout_session.id})
     except Exception as e:
         return jsonify(error=str(e)), 403
-    
 
+
+@login_required
 def view_shoppingbag(request):
     """ A view that renders the guests shopping bag """
 
     return render(request, 'shoppingbag/shoppingbag.html')
 
-
-def view_shoppingbag(request):
-    """ A view that renders the guests shopping bag """
-
-    return render(request, 'shoppingbag/shoppingbag.html')
-
-
+@login_required
 def add_to_shoppingbag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
@@ -80,7 +63,7 @@ def add_to_shoppingbag(request, item_id):
     request.session['shoppingbag'] = shoppingbag
     return redirect(redirect_url)
 
-
+@login_required
 def modify_shoppingbag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 

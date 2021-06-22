@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
 from django.conf import settings
-
+from django.contrib import messages
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -25,9 +25,13 @@ def contact(request):
 			message = "\n".join(body.values())
 
 			try:
-				send_mail(subject, message, 'Email_Adress', ['tyserallan@gmail.com']) 
+				send_mail(subject, message, 'Email_Adress', ['tyserallan@gmail.com'])
+                messages.success(request, 'Your booking was successful!', extra_tags='alert')
 			except BadHeaderError:
 				return HttpResponse('Invalid header found.')
-			return redirect ("home")
 	form = ContactForm()
 	return render(request, "contact.html", {'form':form})
+
+def submit(request):
+  success = False
+  success_message = " Thanks!"
