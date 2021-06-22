@@ -26,12 +26,24 @@ def contact(request):
 
 			try:
 				send_mail(subject, message, 'Email_Adress', ['tyserallan@gmail.com'])
-                messages.success(request, 'Your booking was successful!', extra_tags='alert')
 			except BadHeaderError:
 				return HttpResponse('Invalid header found.')
 	form = ContactForm()
 	return render(request, "contact.html", {'form':form})
 
-def submit(request):
-  success = False
-  success_message = " Thanks!"
+
+class SuccessMessageMixin:
+    """
+    Add a success message on successful form submission.
+    """
+    success_message = 'AMAZING'
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        success_message = self.get_success_message(form.cleaned_data)
+        if success_message:
+            messages.success(self.request, success_message)
+        return response
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message % cleaned_data
