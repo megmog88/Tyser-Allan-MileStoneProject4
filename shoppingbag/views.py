@@ -16,17 +16,24 @@ stripe.api_key = 'sk_test_51J0z9rGPlg2qv8pjSe6AaOP3N618aC0yFl6C1XeOrpsK9rhR55lqb
 YOUR_DOMAIN = 'http://localhost:4242'
 
 @login_required
-def create_checkout_session():
-    try:
+def create_checkout_session(request: HttpRequest):
+ 
+    customer = ... # get customer model based off request.user
+ 
+    if request.method == 'POST':
+ 
+        # Set Stripe API key
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+ 
+        # Create Stripe Checkout session
         checkout_session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            mode='payment',
-            success_url=YOUR_DOMAIN + '/success.html',
-            cancel_url=YOUR_DOMAIN + '/cancel.html',
+            payment_method_types=["card"],
+            mode="subscription",
+            success_url=f"https://tyser-allan.herokuapp.com/payment/success?sessid={{CHECKOUT_SESSION_ID}}",
+            cancel_url=f"https://tyser-allan.herokuapp.com/payment/cancel", # The cancel_url is typically set to the original product page
         )
-        return jsonify({'id': checkout_session.id})
-    except Exception as e:
-        return jsonify(error=str(e)), 403
+ 
+    return JsonResponse({'sessionId': checkout_session['id']})
 
 
 @login_required

@@ -73,9 +73,10 @@ Robotto, it works perfectly for my project as I didn't need anything fancy.
 ### 
 
 ## Features Left to Implement
+* Finish the stripe checkout page, as it isn't complete
 * I would like to implement a Trust Pilot, so customers can leave realtime reviews.
+* Add success buttons on form submit and add to bag.
 
-###
 
 ## Technologies Used
 Below is a list of all technologies used in order to achieve the end goal.

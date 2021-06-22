@@ -94,7 +94,7 @@
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
                 {% endif %}
-                <form action="checkout" method="POST">
+                <form action="stripe_create_checkout_session" method="POST">
                     {% csrf_token %}
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="stripe-button"
         data-key="pk_live_51J0z9rGPlg2qv8pjrrMspZQtlwFl0LWg2DpS9Aqirb4WJKLzPFWdpOAmUF6chaJ2KkVi41zfLV3ofgZ4e25bUxxR007oT931EA"
