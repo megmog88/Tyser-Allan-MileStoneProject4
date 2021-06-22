@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 
 /*----------------------Footer Styling---*/
 .fab, .fa {
@@ -11,7 +18,8 @@
 .footer-button {
     background-color: #7395AE;
     color: #5D5C61;
-    text-emphasis: bold;
+    -webkit-text-emphasis: bold;
+            text-emphasis: bold;
     font-size: 24px;
     text-transform: uppercase;
 

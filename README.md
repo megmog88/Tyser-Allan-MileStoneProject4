@@ -74,6 +74,7 @@ Robotto, it works perfectly for my project as I didn't need anything fancy.
 
 ## Features Left to Implement
 * I would like to implement a Trust Pilot, so customers can leave realtime reviews.
+
 ###
 
 ## Technologies Used
@@ -90,7 +91,6 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 #### Frameworks
 * Bootstrap- Used to format and style my site.
 * Flask- Micro framework for python
-* MongoDB- to store my database
 * SQlite- as my database locally
 * Postgress- as my database deployed.
 
@@ -113,10 +113,6 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 * W3C HTML Validator[https://validator.w3.org/]
 * W3C CSS Validator[https://jigsaw.w3.org/css-validator/]
 * Autoprefixer CSS[https://autoprefixer.github.io/]
-* PEP8 onlick chec - Results[http://pep8online.com/checkresult]
-* Am I responsive [http://ami.responsivedesign.is/] used to check compatibility with a numerous amount of devices,
-see picture below.
-![Am I Responsive](static/images/amiresponsive.PNG)
 * I consistantly was using chrome web developer tools, however when push to my mobile found these to not be the most
 accurate. The design was though out to ensure smaller screens were not squished and legible throughout. The layout 
 of the other pages are slightly different throughout each breakpoint.
@@ -144,6 +140,19 @@ For my website I used Heroku to deploy my site, See below steps followed to depl
 5. Create  "Procfile", needed by Heroku in order to know how to run the app
 6. Connected to github with config values stored
 7. All connected and up and running on Heroku's servers. 
+
+
+### Testing User Stories
+1. As a website visitor I can navigate my way through the page and see what the business does.
+2. As a website user I have a clear and defined path
+3. As a website user I can buy and browse merchandise
+4. As website user I can request a quote
+5. As a website user I can see exactly what the business entails.
+6. As a business owner my work looks displayed professinaly and correctly
+7. As a business owner I can see myself gaining more customers
+8. As business owner I can see my different aspects are all there.
+9. As a business owner I can see a clear path throughout the site
+10. My business is cleary portrayed to show case the best of it. 
 
 ## Credits
 * Oliver Tyser and Mark Allan for allowing me to use their images and company to make a website.
