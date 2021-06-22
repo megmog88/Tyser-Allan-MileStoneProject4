@@ -110,3 +110,40 @@ def remove_shoppingbag(request, item_id):
     except Exception as e:
         return HttpResponse(status=500)
 
+endpoint_secret = 'whsec_8OSztSqQWtSHesWexLjClViw3TMIW9pj'
+
+
+def my_webhook_view(request):
+  payload = request.body
+  sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+  event = None
+
+  try:
+    event = stripe.Webhook.construct_event(
+      payload, sig_header, endpoint_secret
+    )
+  except ValueError as e:
+    # Invalid payload
+    return HttpResponse(status=400)
+  except stripe.error.SignatureVerificationError as e:
+    # Invalid signature
+    return HttpResponse(status=400)
+
+  # Handle the checkout.session.completed event
+  if event['type'] == 'checkout.session.completed':
+    session = event['data']['object']
+
+    line_items = stripe.checkout.Session.list_line_items(session['id'], limit=100)
+
+    # Fulfill the purchase...
+    try:
+      fulfill_order(session, line_items)
+    except NotImplementedError as e:
+      return HttpResponse(status=400)
+
+  # Passed signature verification
+  return HttpResponse(status=200)
+
+def fulfill_order(session, line_items):
+  # TODO: Remove error and implement...
+  raise NotImplementedError("Given the Checkout Session \"" + session['id'] + "\", load your internal order from the database here.\nThen you can reconcile your order's quantities with the final line item quantity purchased.\nYou can use `checkout_session.metadata` and `price.metadata` to store and later reference your internal order and item ids.")

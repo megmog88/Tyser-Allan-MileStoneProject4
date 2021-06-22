@@ -7,7 +7,7 @@ draping. A couple of my good friends have recently joined forces and set up a bu
 making their website for them. The idea is to show off the amazing work they do and make a fully functioning
 website that allows users to get in touch for quotes and/or buy merchandise that they are selling. 
 
-You can get to my live site through the following link [INSERT LINK HERE MEGHAN]
+You can get to my live site through the following link [https://tyser-allan.herokuapp.com/]
 
 # Table of Contents
 
@@ -47,6 +47,8 @@ The goals for the business are
 10. As a business owner I want my website to portray and showcase my business
 
 ### Wireframes
+See the link for my wireframes, all be it a bit changed throughout the process, but I started with this set up.
+Wireframes[https://github.com/megmog88/Tyser-Allan-MileStoneProject4/blob/master/MS4%20Wireframes%20PDF.pdf]
 
 ### Color scheme
 
@@ -108,7 +110,40 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 
 ## Testing 
 
+* W3C HTML Validator[https://validator.w3.org/]
+* W3C CSS Validator[https://jigsaw.w3.org/css-validator/]
+* Autoprefixer CSS[https://autoprefixer.github.io/]
+* PEP8 onlick chec - Results[http://pep8online.com/checkresult]
+* Am I responsive [http://ami.responsivedesign.is/] used to check compatibility with a numerous amount of devices,
+see picture below.
+![Am I Responsive](static/images/amiresponsive.PNG)
+* I consistantly was using chrome web developer tools, however when push to my mobile found these to not be the most
+accurate. The design was though out to ensure smaller screens were not squished and legible throughout. The layout 
+of the other pages are slightly different throughout each breakpoint.
+
+* Tested each page manually to ensure effects worked throughout and responded accordingly.
+* Tested manually on teh following devices
+    - Iphone 7
+    - Ipad 
+    - Ipad Pro
+    - HP Windows Laptop
+    - Mac Book Pro
+* Browser Capability- I have tested on the following browsers.
+    - Mozilla
+    - Microsoft Edge
+    - Safari
+    - Google Chrome
+    - Internet Explorer
 ## Deployment
+For my website I used Heroku to deploy my site, See below steps followed to deploy.
+
+1. Create Name for App
+2. Link the app to the GitHub repository by going to the "Deploy" tab in the main app menu.
+3. Select a branch to deploy automatically
+4. Pipenv to deal with my virtual enviroment and requirements.txt for dependancies
+5. Create  "Procfile", needed by Heroku in order to know how to run the app
+6. Connected to github with config values stored
+7. All connected and up and running on Heroku's servers. 
 
 ## Credits
 * Oliver Tyser and Mark Allan for allowing me to use their images and company to make a website.

@@ -94,11 +94,11 @@
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
                 {% endif %}
-                <form action="{% url 'shoppingbag'}" method="POST">
+                <form action="checkout" method="POST">
                     {% csrf_token %}
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="stripe-button"
-        data-key="pk_test_51J0z9rGPlg2qv8pjaAyxq9wS7ZU0VkHz4hHn0tdHUmeXxyVieqCIrbxLOHycmQOhIQKzCP90QArzRC0BMM4zFxql00mVGsnXnl"
-        data-amount="{{ grand_total|floatformat:2 }}"
+        data-key="pk_live_51J0z9rGPlg2qv8pjrrMspZQtlwFl0LWg2DpS9Aqirb4WJKLzPFWdpOAmUF6chaJ2KkVi41zfLV3ofgZ4e25bUxxR007oT931EA"
+        data-amount="{{ grand_total }}"
         data-name="Tyser&Allan"
         data-description="Shopping Bag"
         data-currency="gbp">
@@ -107,7 +107,7 @@
     <script>
       var DOMAIN = window.location.origin;
  
-      var stripe = Stripe("{{ STRIPE_PUB_KEY }}");
+      var stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
  
       // Handle any errors from Checkout
       var handleResult = function (result) {
